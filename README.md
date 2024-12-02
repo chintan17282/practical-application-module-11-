@@ -279,3 +279,10 @@ D --> E(LinearRegression)
 ##### Transformation + PolynomialFeature (4 fields) + Ridge (alpha=10)
 
 <img src="images/Ridge_ap=lpha_10_lineplot.png" style="zoom:100%;" />
+
+---
+
+# Evaluation
+
+- The best model with lowest MSE is Applying PolynimialFeature (degree=2) on all features. Unfortunately its a very expensive model with over 1900+ features
+- There is a recommenndation to either use `Model 2`, applying PolynimialFeature (degree=2)  on 4 features ('year', 'odometer', cylinder, 'condition') or `Model 10` or `Model 11` using `Ridge` model.
