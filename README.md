@@ -284,5 +284,59 @@ D --> E(LinearRegression)
 
 # Evaluation
 
-- The best model with lowest MSE is Applying PolynimialFeature (degree=2) on all features. Unfortunately its a very expensive model with over 1900+ features
-- There is a recommenndation to either use `Model 2`, applying PolynimialFeature (degree=2)  on 4 features ('year', 'odometer', cylinder, 'condition') or `Model 10` or `Model 11` using `Ridge` model.
+---
+
+**Model 1**: Simplest to implement. PolynomialFeature is applied to 2 of the most relevent and high dependent variables - Price and Odometer. There are quiet a few nonnumeric, categorial data like `transmission`, `fuel`, `type`, `drive`,  `paint_color`, `state` and `manufacturer` on which we have applied OneHotEncodoing is applied. out of which on 1st 5 fields a SimpleImputer is used to assume all `null` as `other`. Inividual OrdinalEncoder was used for `cylinders` and `condition`. StandardScaler on `year` and `odometer`
+
+We had predetermined using loop, the best degree to be used is seen at 2. 
+
+**Con**: The MSE was a bit on higher end as compared with few others. 
+
+---
+
+**Model 2**: Is an enhancement of above model. The only change is we had Applied PolynomialFeature (degree=2) on all the fields 10 after transforming as in above.
+
+**Con** : There were **9179** total features in model which is quiet heavy. Also fitting this model took considerable time.
+
+**Pro**:  The MSE was the least of all the tried out models. If we desire more accurate prediction result, we can still use this model. 
+
+---
+
+**Model 3**: This model is mod way between the Model 1 and Model 2. The transformation is same, but the PolynomialFeature (degree=2) was applied on 4 fields. `cylinders`, `condition`, `year` and `odometer` .OneHotEncodoing was applied on rest 7 nonnumeric categorial data. StandardScaler on `year` and `odometer` 
+
+**Pro**: This gave a better results than **Model 1****, but the model was on 139 features only as compared to 9K+ as in Model 2. The fiting and prediction is must faster than Model 2.
+
+**Con**: Has more MSE as compared to **Model 2**. 
+
+---
+
+**Model 4, 5 ,6**. In attempt to narrow down the to key features which controbute to the model fitting, The Transformation and PolynomialFeature was kept as it is but `SequentialFeatureSelector` was used to pick 15, 20 and 30 features in Model 4, 5 and 6 respectively. 
+
+-  With increasing number of features, the MSE kept decreasing and at 30 features, it was down below **Model 1**
+- If we had selected more features, MSE would have leveled up with **Model 3** but with less number of features.
+
+---
+
+**Model 7, 8, 9** These 3 models are based on `SelectFromModel` and `Lasso` model. The difference being **Model 7**, was using feature selection (`SelectFromModel`) using `Lasso` Model without specifying the number of features. **Model 8** is using plain `Lasso` Model and **Model 9** is variation of Model 7, with difference that we have specified number of features to select. The Transformation of all features  was kepy same is in Model 4,5,and 6
+
+-  The MSE was at same level as Model 2 for all 3 Models, there was no significant improvement or degrade of MSE.
+
+**Con**: Fitting was taking the longest possible time as compared to all other models
+
+---
+
+**Model 10, 11** These 2 models are based on `Ridge` model. **Model 10** was using the default alpha and for Model 11, Optimum value of `alpha` was determined to be 10 using **GridSearchCV**. The performance is must better than Lasso Models. 
+
+-  MSE were again same as Model 2, 7, 8 and 9
+
+---
+
+**Conclusion**
+
+- The best model with lowest MSE is Applying PolynimialFeature (degree=2) on all features. Unfortunately its a very expensive model with over 9179+ features. 
+- There is a recommenndation to either use `Model 2`, applying PolynimialFeature (degree=2)  on 4 features ('year', 'odometer', cylinder, 'condition') or `Model 10` or `Model 11` using `Ridge` model. 
+
+
+
+
+
