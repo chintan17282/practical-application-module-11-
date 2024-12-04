@@ -100,19 +100,19 @@ type            15.90
 
 
 
-| Model      | Description  | Training MSE | Test MSE|
-| ----------- | ----------- |--|--|
-| 1 | Transformation + Linear Regression                           | 38181229.52403128 | 38075772.29807217 |
-| 2 | Transformation + <br>PolynomialFeature (all fields) + <br>Linear Regression | 23762515.4827903 | 24927248.450849023 |
-| 3 | Transformation + <br/>PolynomialFeature (4 fields) + <br/>Linear Regression | 35454226.46229427 | 35323206.23269257 |
-| 4 | Transformation + <br/>PolynomialFeature (4 fields) + <br/>SequentialFeatureSelector (15 features)<br>Linear Regression | 40621101.505078465 | 40581119.91222496 |
-| 5 | Transformation + <br/>PolynomialFeature (4 fields) + <br/>SequentialFeatureSelector (20 features)<br/>Linear Regression | 39202495.23184522 | 39090014.52399856 |
-| 6 | Transformation + <br/>PolynomialFeature (4 fields) + <br/>SequentialFeatureSelector (30 features)<br/>Linear Regression | 37303420.38294286 | 37126532.58778653 |
-| 7 | Transformation + <br/>PolynomialFeature (4 fields) + <br/>SelectFromModel(Lasso())<br/>Linear Regression | 35465551.2312093 | 35327202.025824144 |
-| 8 | Transformation + <br/>PolynomialFeature (4 fields) + <br/>Lasso (20 features) | 35481125.61269196 | 35351191.26094681 |
-| 9 | Transformation + <br/>PolynomialFeature (4 fields) + <br/>SelectFromModel(Lasso(), max_features=75)<br/>Linear Regression | 35864312.200730674 | 35748186.65240281 |
-| 10 | Transformation + <br/>PolynomialFeature (4 fields) + <br/>Ridge (default alpha) | 35454726.4658569 | 35324613.363171615 |
-| 11 | Transformation + <br/>PolynomialFeature (4 fields) + <br/>Ridge (alpha=10) | 35462355.35987914 | 35329028.7862134 |
+| Model      | Description  | Training MSE | Test MSE| R-Square |
+| ----------- | ----------- |--|--| ----------- |
+| 1 | Transformation + Linear Regression                           | 38181229.52403128 | 38075772.29807217 | 0.7554 |
+| 2 | Transformation + <br>PolynomialFeature (all fields) + <br>Linear Regression | 23762515.4827903 | 24927248.450849023 | 0.8409 |
+| 3 | Transformation + <br/>PolynomialFeature (4 fields) + <br/>Linear Regression | 35454226.46229427 | 35323206.23269257 | 0.7746 |
+| 4 | Transformation + <br/>PolynomialFeature (4 fields) + <br/>SequentialFeatureSelector (15 features)<br>Linear Regression | 40621101.505078465 | 40581119.91222496 | 0.7411 |
+| 5 | Transformation + <br/>PolynomialFeature (4 fields) + <br/>SequentialFeatureSelector (20 features)<br/>Linear Regression | 39202495.23184522 | 39090014.52399856 | 0.7506 |
+| 6 | Transformation + <br/>PolynomialFeature (4 fields) + <br/>SequentialFeatureSelector (30 features)<br/>Linear Regression | 37303420.38294286 | 37126532.58778653 | 07631 |
+| 7 | Transformation + <br/>PolynomialFeature (4 fields) + <br/>SelectFromModel(Lasso())<br/>Linear Regression | 35465551.2312093 | 35327202.025824144 | 0.7746 |
+| 8 | Transformation + <br/>PolynomialFeature (4 fields) + <br/>Lasso (20 features) | 35481125.61269196 | 35351191.26094681 | 0.7744 |
+| 9 | Transformation + <br/>PolynomialFeature (4 fields) + <br/>SelectFromModel(Lasso(), max_features=75)<br/>Linear Regression | 35864312.200730674 | 35748186.65240281 | 0.7719 |
+| 10 | Transformation + <br/>PolynomialFeature (4 fields) + <br/>Ridge (Default alpha) | 35454726.4658569 | 35324613.363171615 | 0.7746 |
+| 11 | Transformation + <br/>PolynomialFeature (4 fields) + <br/>Ridge (alpha=8.11) | 35461886.65282253 | 35327803.886383526 | 0.7746 |
 
 
 
