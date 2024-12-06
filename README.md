@@ -2,11 +2,11 @@
 
 ### Problem statement
 
-The provided dataset contains information on 426K cars to ensure speed of processing. Your goal is to understand what factors make a car more or less expensive. As a result of your analysis, you should provide clear recommendations to your client -- a used car dealership -- as to what consumers value in a used car.
+The provided dataset contains information on 426K cars to ensure speed of processing. The goal is to understand what factors make a car more or less expensive. As a result of your analysis, you should provide clear recommendations to your client -- a used car dealership -- as to what consumers value in a used car.
 
 ![](images/kurt.jpeg)
 
-# Prepration
+# Preparation (Enrichment / Backfill)
 
 It was noticed a majority of data was missing, thus building a meaningful model may be challanging. We wanted to collect as much data as possible to make more meaningful prediction. 
 
@@ -337,6 +337,8 @@ Each and every had gone ColumnTransfromation, Standard Scalar and Model was appl
 
 
 
+# Summary 
+
 **Model 1**: Simplest to implement. PolynomialFeature is applied to 2 of the most relevent and high dependent variables - Price and Odometer. There are quiet a few nonnumeric, categorial data like `transmission`, `fuel`, `type`, `drive`,  `paint_color`, `state` and `manufacturer` on which we have applied OneHotEncodoing is applied. out of which on 1st 5 fields a SimpleImputer is used to assume all `null` as `other`. Inividual OrdinalEncoder was used for `cylinders` and `condition`. StandardScaler on `year` and `odometer`
 
 We had predetermined using loop, the best degree to be used is seen at 2. 
@@ -386,10 +388,11 @@ Column Transform for all modules below is kept same as below
 
 ---
 
-**Conclusion**
+# Conclusion
 
 - The best model with lowest MSE is Applying PolynimialFeature (degree=2) on all features. Unfortunately its a very expensive model with over 9179+ features. 
-- There is a recommenndation to either use `Model 2`, applying PolynimialFeature (degree=2)  on 4 features ('year', 'odometer', cylinder, 'condition') or `Model 10` or `Model 11` using `Ridge` model. 
+- There is a recommenndation to either use `Model 2`, applying PolynimialFeature (degree=2)  on 4 features ('year', 'odometer', cylinder, 'condition') As it considers polynomialFeatures for some key numeric features and uses OrdinalEncoding, OneHotEncoding on other features..
+- `Model 10` or `Model 11` using `Ridge` model which is an alternate model to above which considers every feature and gives right penalty to some features.
 
 
 
