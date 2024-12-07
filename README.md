@@ -356,8 +356,8 @@ Each and every had gone ColumnTransfromation, Standard Scalar and Model was appl
 | 7     | Transformation + <br/>PolynomialFeature (4 fields) + <br/>SelectFromModel(Lasso())<br/>Linear Regression | 35465551.2312093    | 35327202.025824144  | 0.7746256443907897 |
 | 8     | Transformation + <br/>PolynomialFeature (4 fields) + <br/>Lasso (20 features) | 35481125.61269196   | 35351191.26094681   | 0.7744726020297394 |
 | 9     | Transformation + <br/>PolynomialFeature (4 fields) + <br/>SelectFromModel(Lasso(), max_features=75)<br/>Linear Regression | 35864312.200730674  | 35748186.65240281   | 0.771939919694359  |
-| 10    | Transformation + <br/>PolynomialFeature (4 fields) + <br/>Ridge (Default alpha) | 35454726.4658569    | 35324613.363171615  | 0.7851398605922834 |
-| 11    | Transformation + <br/>PolynomialFeature (4 fields) + <br/>Ridge (alpha=8.11) | 35461886.65282253   | 35327803.886383526  | 0.7851232520588916 |
+| 10    | Transformation + <br/>PolynomialFeature (4 fields) + <br/>Ridge (Default alpha) | 0.13859773484789684 | 0.1393296761248055  | 0.7851398605922834 |
+| 11    | Transformation + <br/>PolynomialFeature (4 fields) + <br/>Ridge (alpha=8.11) | 0.13860684730393605 | 0.1393404462080083  | 0.7851232520588916 |
 
 
 
