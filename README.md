@@ -103,7 +103,13 @@ The whole Expercise was split in to multiple sub sections
 
 
 
-- Each of the parameters were individually analyzed to see thr pattern and distribution
+- Distribution of manufacturer's and price data 
+
+<img src="images/manufacturer_price.png" style="zoom:100%;" />
+
+
+
+Each of the parameters were individually analyzed to see thr pattern and distribution
 
 | Diagram                                                      |                                                         |
 | ------------------------------------------------------------ | ------------------------------------------------------- |
@@ -157,6 +163,8 @@ D --> E(LinearRegression)
 
 <img src="images/PolynomialFeatures_Degree_2_lineplot.png" style="zoom:100%;" />
 
+<img src="images/PolynomialFeatures_Degree_2_residue_plot.png" style="zoom:100%;" />
+
 ---
 
 ### Model 2
@@ -175,11 +183,9 @@ File Reference [05_model_2_3.ipynb](05_model_2_3.ipynb)
 3. LinearRegression
 ```
 
-
-
-
-
 <img src="images/PolynomialFeatureson_All_Fields_lineplot.png" style="zoom:100%;" />
+
+<img src="images/PolynomialFeatureson_All_Fields_residue_plot.png" style="zoom:100%;" />
 
 ---
 
@@ -201,6 +207,8 @@ File Reference [05_model_2_3.ipynb](05_model_2_3.ipynb)
 
 <img src="images/PolynomialFeatureson_4_Fields_lineplot.png" style="zoom:100%;" />
 
+<img src="images/PolynomialFeatureson_4_Fields_residue_plot.png" style="zoom:100%;" />
+
 ---
 
 ### Model 4
@@ -219,6 +227,8 @@ File Reference [06_model_4_5_6.ipynb](06_model_4_5_6.ipynb)
 ```
 
 <img src="images/SequentialFeatureSearch_15Fields_lineplot.png" style="zoom:100%;" />
+
+<img src="images/SequentialFeatureSearch_15Fields_residue_plot.png" style="zoom:100%;" />
 
 ---
 
@@ -239,6 +249,8 @@ File Reference [06_model_4_5_6.ipynb](06_model_4_5_6.ipynb)
 
 <img src="images/SequentialFeatureSearch_20Fields_lineplot.png" style="zoom:100%;" />
 
+<img src="images/SequentialFeatureSearch_20Fields_residue_plot.png" style="zoom:100%;" />
+
 ---
 
 ###  Model 6 
@@ -257,6 +269,8 @@ File Reference [06_model_4_5_6.ipynb](06_model_4_5_6.ipynb)
 ```
 
 <img src="images/SequentialFeatureSearch_30Fields_lineplot.png" style="zoom:100%;" />
+
+<img src="images/SequentialFeatureSearch_30Fields_residue_plot.png" style="zoom:100%;" />
 
 ---
 
@@ -277,6 +291,8 @@ File Reference [07_model_7_8_9.ipynb](07_model_7_8_9.ipynb)
 
 <img src="images/SelectFromModel_Lasso_lineplot.png" style="zoom:100%;" />
 
+<img src="images/SelectFromModel_Lasso_residue_plot.png" style="zoom:100%;" />
+
 
 
 ---
@@ -289,6 +305,8 @@ File Reference [07_model_7_8_9.ipynb](07_model_7_8_9.ipynb)
 
 <img src="images/Lasso_lineplot.png" style="zoom:100%;" />
 
+<img src="images/Lasso_residue_plot.png" style="zoom:100%;" />
+
 ### Model 9
 
 File Reference [07_model_7_8_9.ipynb](07_model_7_8_9.ipynb)
@@ -296,6 +314,8 @@ File Reference [07_model_7_8_9.ipynb](07_model_7_8_9.ipynb)
 ##### Transformation + PolynomialFeature (4 fields) + SelectFromModel(Lasso(), max_features=75) + Linear Regression
 
 <img src="images/SelectFromModel_Lasso_75_lineplot.png" style="zoom:100%;" />
+
+<img src="images/SelectFromModel_Lasso_75_residue_plot.png" style="zoom:100%;" />
 
 ### Model 10
 
@@ -305,6 +325,8 @@ File Reference [08_model_10_11.ipynb](08_model_10_11.ipynb)
 
 <img src="images/Ridge_alpha_1_lineplot.png" style="zoom:100%;" />
 
+<img src="images/Ridge_alpha_1_residue_plot.png" style="zoom:100%;" />
+
 ### Model 11
 
 File Reference [08_model_10_11.ipynb](08_model_10_11.ipynb)
@@ -312,6 +334,8 @@ File Reference [08_model_10_11.ipynb](08_model_10_11.ipynb)
 ##### Transformation + PolynomialFeature (4 fields) + Ridge (alpha=10)
 
 <img src="images/Ridge_alpha_10_lineplot.png" style="zoom:100%;" />
+
+<img src="images/Ridge_alpha_10_residue_plot.png" style="zoom:100%;" />
 
 ---
 
@@ -321,19 +345,19 @@ File Reference [08_model_10_11.ipynb](08_model_10_11.ipynb)
 
 Each and every had gone ColumnTransfromation, Standard Scalar and Model was applied. MSE and R<sup>2</sup> were tablulated. as below.
 
-| Model | Description                                                  | Training MSE       | Test MSE           | R-Square |
-| ----- | ------------------------------------------------------------ | ------------------ | ------------------ | -------- |
-| 1     | Transformation + Linear Regression                           | 38181229.52403128  | 38075772.29807217  | 0.7554   |
-| 2     | Transformation + <br>PolynomialFeature (all fields) + <br>Linear Regression | 23762515.4827903   | 24927248.450849023 | 0.8409   |
-| 3     | Transformation + <br/>PolynomialFeature (4 fields) + <br/>Linear Regression | 35454226.46229427  | 35323206.23269257  | 0.7746   |
-| 4     | Transformation + <br/>PolynomialFeature (4 fields) + <br/>SequentialFeatureSelector (15 features)<br>Linear Regression | 40621101.505078465 | 40581119.91222496  | 0.7411   |
-| 5     | Transformation + <br/>PolynomialFeature (4 fields) + <br/>SequentialFeatureSelector (20 features)<br/>Linear Regression | 39202495.23184522  | 39090014.52399856  | 0.7506   |
-| 6     | Transformation + <br/>PolynomialFeature (4 fields) + <br/>SequentialFeatureSelector (30 features)<br/>Linear Regression | 37303420.38294286  | 37126532.58778653  | 07631    |
-| 7     | Transformation + <br/>PolynomialFeature (4 fields) + <br/>SelectFromModel(Lasso())<br/>Linear Regression | 35465551.2312093   | 35327202.025824144 | 0.7746   |
-| 8     | Transformation + <br/>PolynomialFeature (4 fields) + <br/>Lasso (20 features) | 35481125.61269196  | 35351191.26094681  | 0.7744   |
-| 9     | Transformation + <br/>PolynomialFeature (4 fields) + <br/>SelectFromModel(Lasso(), max_features=75)<br/>Linear Regression | 35864312.200730674 | 35748186.65240281  | 0.7719   |
-| 10    | Transformation + <br/>PolynomialFeature (4 fields) + <br/>Ridge (Default alpha) | 35454726.4658569   | 35324613.363171615 | 0.7746   |
-| 11    | Transformation + <br/>PolynomialFeature (4 fields) + <br/>Ridge (alpha=8.11) | 35461886.65282253  | 35327803.886383526 | 0.7746   |
+| Model | Description                                                  | Training MSE        | Test MSE            | R-Square           |
+| ----- | ------------------------------------------------------------ | ------------------- | ------------------- | ------------------ |
+| 1     | Transformation + Linear Regression                           | 0.14809612781795573 | 0.14904419231979302 | 0.7701591159154361 |
+| 2     | Transformation + <br>PolynomialFeature (all fields) + <br>Linear Regression | 0.10089783922900376 | 0.10689198652446408 | 0.83516198583824   |
+| 3     | Transformation + <br/>PolynomialFeature (4 fields) + <br/>Linear Regression | 0.13856419831479289 | 0.13928200685942604 | 0.7852133713136872 |
+| 4     | Transformation + <br/>PolynomialFeature (4 fields) + <br/>SequentialFeatureSelector (15 features)<br>Linear Regression | 0.1625285241144871  | 0.16347973657072165 | 0.7478980790965283 |
+| 5     | Transformation + <br/>PolynomialFeature (4 fields) + <br/>SequentialFeatureSelector (20 features)<br/>Linear Regression | 0.1547872358654024  | 0.15567895634419288 | 0.7599276536536353 |
+| 6     | Transformation + <br/>PolynomialFeature (4 fields) + <br/>SequentialFeatureSelector (30 features)<br/>Linear Regression | 0.14685581610077408 | 0.14746063333880807 | 0.772601120468077  |
+| 7     | Transformation + <br/>PolynomialFeature (4 fields) + <br/>SelectFromModel(Lasso())<br/>Linear Regression | 35465551.2312093    | 35327202.025824144  | 0.7746256443907897 |
+| 8     | Transformation + <br/>PolynomialFeature (4 fields) + <br/>Lasso (20 features) | 35481125.61269196   | 35351191.26094681   | 0.7744726020297394 |
+| 9     | Transformation + <br/>PolynomialFeature (4 fields) + <br/>SelectFromModel(Lasso(), max_features=75)<br/>Linear Regression | 35864312.200730674  | 35748186.65240281   | 0.771939919694359  |
+| 10    | Transformation + <br/>PolynomialFeature (4 fields) + <br/>Ridge (Default alpha) | 35454726.4658569    | 35324613.363171615  | 0.7851398605922834 |
+| 11    | Transformation + <br/>PolynomialFeature (4 fields) + <br/>Ridge (alpha=8.11) | 35461886.65282253   | 35327803.886383526  | 0.7851232520588916 |
 
 
 
